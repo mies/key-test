@@ -20,4 +20,4 @@ deploy:
    - script:
       name: communicate
       code: |
-        ssh -i $PRIVATEKEY_PATH -l root mies.io uname -a
+        ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no mies.io uname -a
