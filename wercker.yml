@@ -11,6 +11,7 @@ deploy:
       name: write key
       filename: $PRIVATEKEY_PATH
       content: $DOKEY_PRIVATE
+      overwrite: true
    - script:
       name: echo
       code: |
