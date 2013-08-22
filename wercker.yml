@@ -20,4 +20,4 @@ deploy:
    - script:
       name: communicate
       code: |
-        ssh -i $PIRVATEKEY_PATH -l root mies.io uname -a
+        ssh -i $PRIVATEKEY_PATH -l root mies.io uname -a
