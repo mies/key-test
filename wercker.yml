@@ -2,3 +2,10 @@ box: wercker/python
 build:
   steps:
     - pip-install
+deploy:
+  steps:
+   - script:
+      name: echo
+      code: |
+          echo $DOKEY_PUBLIC
+          echo $DOKEY_PRIVATE
