@@ -5,7 +5,18 @@ build:
 deploy:
   steps:
    - script:
+      name: create file temp
+      code: export PRIVATEKEY_PATH=$(mktemp)
+   - create-file
+      name: write key
+      filename: $PRIVATEKEY_PATH
+      content: $DOKEY_PRIVATE
+   - script:
       name: echo
       code: |
           echo $DOKEY_PUBLIC
           echo $DOKEY_PRIVATE
+   - script:
+      name: communicate
+      code: |
+        ssh -i $PIRVATEKEY_PATH -l root mies.io uname -a
