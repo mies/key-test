@@ -7,7 +7,7 @@ deploy:
    - script:
       name: create file temp
       code: export PRIVATEKEY_PATH=$(mktemp)
-   - create-file
+   - create-file:
       name: write key
       filename: $PRIVATEKEY_PATH
       content: $DOKEY_PRIVATE
